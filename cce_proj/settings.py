@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'jobs.apps.JobsConfig',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +119,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #si copia la riga del DB sopra "os.path.join(BASE_DIR, 'db.sqlite3'" e si cambia
+MEDIA_URL = '/media/' #da classe in models se si carica una immagine, l'immagine si metterà dentro /media/image come spazio fisico e come url l
