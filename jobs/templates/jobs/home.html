@@ -73,18 +73,21 @@
   <div class="album py-5 bg-light">
     <div class="container">
 
+<form>
     {% for job in jobs.all %} <!-- inizio loop -->
         <h4>{{ job.title }}</h4>
         <div class="input-group mb-3" >
-            <img class="img-fluid" src="{{ job.image.url }}" height="35" width="35" style="vertical-align:middle;margin:0px 50px"/>
-            <input type="text" class="form-control" placeholder="{{ job.placeholder }}" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <img class="img-fluid" src="{{ job.image.url }}" height="35" width="35" style="vertical-align:middle;margin:0px 30px"/>
+            <input type="text" class="form-control" placeholder="{{ job.description }}" aria-label="Recipient's username" aria-describedby="button-addon2" readonly>
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">{{ job.button_text }}</button>
+            <a href="{{ job.url }}" button class="btn btn-outline-secondary" type="button" id="button-addon2">START!</a>
             </div>
         </div>
-        <p>{{ job.description }}</p>
         <br>
     {% endfor %} <!-- fine loop -->
+
+
+</form>
 
       </div>
     </div>
